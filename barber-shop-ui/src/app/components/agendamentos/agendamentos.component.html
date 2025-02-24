@@ -1,0 +1,28 @@
+<div class="container mt-4">
+    <h2 class="mb-4">Agendamentos</h2>
+
+    <label for="cliente">Pesquisar Cliente:</label>
+    <select class="form-control mb-2" [(ngModel)]="novoAgendamento.cliente">
+        <option *ngFor="let cliente of clientes" [ngValue]="cliente">
+            {{ cliente.nome }} - {{ cliente.email }} - {{ cliente.telefone }}
+        </option>
+    </select>
+
+    <label for="data">Escolha uma Data:</label>
+    <input type="date" class="form-control mb-2" [(ngModel)]="novoAgendamento.data">
+
+    <label for="hora">Escolha um Horário:</label>
+    <input type="time" class="form-control mb-2" [(ngModel)]="novoAgendamento.hora">
+
+    <button class="btn btn-primary mb-3" (click)="criarAgendamento()">Confirmar Agendamento</button>
+
+    <h3 class="mt-4">Horários Agendados:</h3>
+    <ul class="list-group">
+        <li *ngFor="let agendamento of agendamentos" class="list-group-item d-flex align-items-center justify-content-between">
+            <span class="d-flex align-items-center">
+                {{ agendamento.cliente.nome }} - {{ agendamento.data }} - {{ agendamento.hora }}
+            </span>
+            <button class="btn btn-danger btn-sm d-flex align-items-center justify-content-center" style="width: 70px; height: 30px;" (click)="excluirAgendamento(agendamento.id)">Excluir</button>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,30 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 56px;
+    background: radial-gradient(circle, #331911, #2b1908, #231902, #1b1901, #121803);
+    border-bottom: 2px solid #45260c;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+
+
